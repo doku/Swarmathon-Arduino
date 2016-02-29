@@ -107,7 +107,7 @@ void loop() {
 ////////////////////////
 
 void parse() {
-  if (rxBuffer == "m") {
+  if (rxBuffer == "m") { // do a rotation on a axis function
     turning = false;
     int speed = Serial.parseInt();
     if (speed >= 0) {
