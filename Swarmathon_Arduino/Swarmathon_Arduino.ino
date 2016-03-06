@@ -134,6 +134,17 @@ void parse() {
     update();
     Serial.println(txBuffer);
   }
+  else if (rxBuffer == "a") {
+    String buf = Serial.readStringUntil(";");
+    int pos = buf.indexOf(":");
+    int speedLeft = buf.substring(0, pos).toInt(); // +1?? 
+    int speedRight = buf.substring(pos+1).toInt(); 
+    if(speedLeft >= 0 && speedRight >= 0){
+      move.forward(speedLeft, speedRight);
+    }
+    // condition when speed is less then zero
+    
+  }
 }
 
 
